@@ -1,0 +1,11 @@
+<?style src="~.[md5]/css/mystyle.css"?>
+<?script src="~.[md5]/js/myscript.js"?>
+<zk>
+	<window border="normal">
+		<caption>
+			<image src="~.[md5]/img/zk-logo.svg" width="60px" height="40px"/>
+		</caption>
+		<button label="Default Button" onClick="@command('cmd')"/>
+		<button label="Important Button" sclass="important" onClick="@command('cmd')"/>
+	</window>
+</zk>

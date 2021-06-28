@@ -1,0 +1,1 @@
+console.log("myscript version 1");

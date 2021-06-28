@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk>
+	<listener>
+		<listener-class>zk.example.cachebust.MD5HashInit</listener-class>
+	</listener>
+</zk>
