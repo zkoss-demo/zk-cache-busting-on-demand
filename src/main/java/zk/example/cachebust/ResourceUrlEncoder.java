@@ -12,6 +12,11 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Map;
 
+/**
+ * A limited ExtendletContext to only implement {@link ExtendletContext#encodeURL}.
+ * All other methods throw an {@link UnsupportedOperationException} indicating incorrect/unexpected use.
+ */
+@FunctionalInterface
 interface ResourceUrlEncoder extends ExtendletContext {
 	@Override
 	default String encodeRedirectURL(HttpServletRequest request, HttpServletResponse response, String uri, Map params, int mode) {

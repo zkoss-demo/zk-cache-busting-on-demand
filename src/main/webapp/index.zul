@@ -2,10 +2,14 @@
 <?script src="~.[md5]/js/myscript.js"?>
 <zk>
 	<window border="normal">
-		<caption>
-			<image src="~.[md5]/img/zk-logo.svg" width="60px" height="40px"/>
-		</caption>
-		<button label="Default Button" onClick="@command('cmd')"/>
-		<button label="Important Button" sclass="important" onClick="@command('cmd')"/>
+		<image src="~./img/zk-logo.svg" width="60px" height="40px"/>
+		Image loaded via "~./img/zk-logo.svg"
+		<separator/>
+		<image src="~.[md5]/img/zk-logo.svg" width="60px" height="40px"/>
+		Image loaded via "~.[md5]/img/zk-logo.svg"
+		<separator/>
+		<button label="Default Button Style" onClick="@command('cmd')"/>
+		<separator/>
+		<button label="Important Button Style" sclass="important" onClick="@command('cmd')"/>
 	</window>
 </zk>

@@ -23,15 +23,15 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class MD5HashInit implements WebAppInit {
 
-	private static final String CWR_EXT_CTX = ".";
-	public static final String MD5_EXT_CTX = ".[md5]";
+	private static final String CWR_EXT_CTX = ".";      // the default CWR URL prefix
+	private static final String MD5_EXT_CTX = ".[md5]"; // our custom resource URL prefix
 
 	public static final String CACHE_ENABLED_PROP = "zk.example.cachebust.MD5HashInit.cacheEnabled";
 
-	private Map<String, String> hashByUri = new ConcurrentHashMap<>();
 	private ServletContext servletContext;
-	private ExtendletContext cwrExtendletContext;
 	private ClassWebResource cwr;
+	private ExtendletContext cwrExtendletContext;
+	private Map<String, String> hashByUri = new ConcurrentHashMap<>();
 	private boolean cacheEnabled;
 
 	@Override
@@ -45,10 +45,10 @@ public class MD5HashInit implements WebAppInit {
 
 	private String encodeURL(ServletRequest request, ServletResponse response, String uri) throws ServletException, IOException {
 		String locatedUri = Servlets.locate(servletContext, request, uri, cwrExtendletContext.getLocator());
+		String defaultCwrUrl = cwrExtendletContext.encodeURL(request, response, locatedUri);
 		String hash = cacheEnabled
 				? hashByUri.computeIfAbsent(locatedUri, this::computeResourceHash)
 				: this.computeResourceHash(locatedUri);
-		String defaultCwrUrl = cwrExtendletContext.encodeURL(request, response, locatedUri);
 		return defaultCwrUrl.replace(cwr.getEncodeURLPrefix(), "/_zv_md5_" + hash); // prefix "/_zv" would be sufficient
 	}
 
