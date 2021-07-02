@@ -8,8 +8,8 @@
 		<image src="~.[md5]/img/zk-logo.svg" width="60px" height="40px"/>
 		Image loaded via "~.[md5]/img/zk-logo.svg"
 		<separator/>
-		<button label="Default Button Style" onClick="@command('cmd')"/>
+		<button label="Default Button Style" />
 		<separator/>
-		<button label="Important Button Style" sclass="important" onClick="@command('cmd')"/>
+		<button label="Important Button Style" sclass="important" />
 	</window>
 </zk>
