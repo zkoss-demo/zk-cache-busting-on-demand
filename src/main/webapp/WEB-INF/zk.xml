@@ -4,4 +4,21 @@
 	<listener>
 		<listener-class>zk.example.cachebust.MD5HashInit</listener-class>
 	</listener>
+	<listener>
+		<listener-class>zk.example.cachebust.SHA1HashInit</listener-class>
+	</listener>
+
+	<!--	https://www.zkoss.org/wiki/ZK_Configuration_Reference/zk.xml/The_Library_Properties/org.zkoss.zk.ui.versionInfo.enabled -->
+	<library-property>
+		<name>org.zkoss.zk.ui.versionInfo.enabled</name>
+		<value>true</value>
+<!--		<value>false</value>-->
+<!--		Custom 'salt' for version hash -->
+<!--		<value>mybuild-001</value>-->
+	</library-property>
+
+	<library-property>
+		<name>org.zkoss.web.servlet.http.URLEncoder</name><!-- can only be one -->
+		<value>zk.example.cachebust.GlobalUrlEncoder</value>
+	</library-property>
 </zk>
