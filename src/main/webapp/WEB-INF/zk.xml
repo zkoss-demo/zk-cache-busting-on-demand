@@ -13,8 +13,9 @@
 		<name>org.zkoss.zk.ui.versionInfo.enabled</name>
 		<value>true</value>
 <!--		<value>false</value>-->
-<!--		Custom 'salt' for version hash -->
-<!--		<value>mybuild-001</value>-->
+<!--		Custom 'salt' for version hash ... currently doesn't affect ZK's version hash in static resource URLs https://tracker.zkoss.org/browse/ZK-4986 -->
+<!--		Alternative provided in src/main/resources/metainfo/zk/lang-addon.xml-->
+<!--		<value>myversion-001</value>-->
 	</library-property>
 
 	<library-property>

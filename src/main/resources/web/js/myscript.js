@@ -1,1 +1,1 @@
-console.log("myscript version 1");
+console.log("myscript version 3");

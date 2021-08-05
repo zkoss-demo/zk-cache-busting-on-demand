@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language-addon>
+    <addon-name>cache-busting</addon-name>
+    <language-name>xul/html</language-name>
+    <depends>zk</depends>
+
+<!--    workaround for https://tracker.zkoss.org/browse/ZK-4986 -->
+<!--    changing ZK's module version will affect the version hash for all static resources -->
+<!--    e.g. myversion-001 will generate a different hash than myversion-002 ... any string will work -->
+    <javascript-module name="zk" version="myversion-001"/>
+</language-addon>

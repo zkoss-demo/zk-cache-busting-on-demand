@@ -12,13 +12,21 @@ Edited for the public training session: "Cache Busting in ZK - Aug 4th 2021"
 ## Built-In Methods/Features
 
 **Change ZK Version Info**
-Library Property [org.zkoss.zk.ui.versionInfo.enabled](https://www.zkoss.org/wiki/ZK_Configuration_Reference/zk.xml/The_Library_Properties/org.zkoss.zk.ui.versionInfo.enabled)
-(zk.xml, command line, system property)
-* +effective / +simple 
-* -brute force / -inefficient
+
+
+~~Library Property~~ [~~org.zkoss.zk.ui.versionInfo.enabled~~](https://www.zkoss.org/wiki/ZK_Configuration_Reference/zk.xml/The_Library_Properties/org.zkoss.zk.ui.versionInfo.enabled)
+
+~~(zk.xml, command line, system property)~~
+* ~~+effective / +simple~~
+* ~~-brute force / -inefficient~~
+
+**NOTE** currently the above doesn't work as expected ([issue ZK-4986](https://tracker.zkoss.org/browse/ZK-4986))
+* workaround is to use the Javascript Module approach - overriding the zk version
+* example: [metainfo/zk/lang-addong.xml](src/main/resources/metainfo/zk/lang-addon.xml)
+  `<javascript-module name="zk" version="myversion-001">`
 
 **Javascript Module** 
-(lang-addon.zul `<javascript-module name="my_mod" version="x.y.z">`)
+(lang-addon.xml `<javascript-module name="my_mod" version="x.y.z">`)
 * +per module (good for independent release cycles)
 * -limited to JS files
 
